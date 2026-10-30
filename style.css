@@ -1,3 +1,12 @@
-h1 {
-    color: dodgergreen;
+body {
+    margin: 0;          /* Убираем лишние отступы по краям */
+    width: 100vw;       /* ровно на ширину экрана */
+    height: 100vh;      /* ровно на высоту экрана */
+    overflow: hidden;   /*окно не будет листаться */
+    
+    /* Настройка фона */
+    background-image: url('pictures/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
