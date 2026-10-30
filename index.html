@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Hive 3.0 Interface</title>
     
+    
+    <script src="script.js" defer></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <img src="pictures/bg.png" class="background-canvas" alt="Фон">
 
 </body>
-<script>
-    // элемент подключения стилей программно
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    
-    // Добавляем к названию style.css текущее время в миллисекундах
-    link.href = 'style.css?v=' + Date.now();
-    
-    // Вставляем эту строчку в шапку сайта
-    document.head.appendChild(link);
-</script>
+
 
 <div class="welcome-container">
     
