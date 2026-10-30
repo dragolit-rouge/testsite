@@ -11,4 +11,16 @@
     <img src="pictures/bg.png" class="background-canvas" alt="Фон">
 
 </body>
+<script>
+    // элемент подключения стилей программно
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    
+    // Добавляем к названию style.css текущее время в миллисекундах
+    link.href = 'style.css?v=' + Date.now();
+    
+    // Вставляем эту строчку в шапку сайта
+    document.head.appendChild(link);
+</script>
+
 </html>
