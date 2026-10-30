@@ -3,11 +3,16 @@ body {
     width: 100vw;       /* ровно на ширину экрана */
     height: 100vh;      /* ровно на высоту экрана */
     overflow: hidden;   /*окно не будет листаться */
+    position: relative;
     
-    /* Настройка фона */
-    background-image: url('pictures/bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+}
+
+.background-canvas {
+    position: absolute;  /* делаем независимой */
+    top: 0;
+    left: 0;
+    width: 100%;        /*на 100% ширины ноутбука */
+    height: 100%;       /*на 100% высоты ноутбука */
+    object-fit: fill;
+    z-index: -1;
 }
