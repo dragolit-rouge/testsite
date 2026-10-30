@@ -1,46 +1,34 @@
-#fastapi код
 import sqlite3
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from flask import Flask, request, jsonify
 
-app = FastAPI()
+app = Flask(__name__)
 
-# Разрешение для гитхаба
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://smarthive.digital"], # Здесь будет адрес вашего сайта
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-DB_FILE = "smart_hive.db"
-
-@app.get("/sensors")
-def get_sensor_data():
-    # Тот самый ваш код работы с SQLite файлом
-    conn = sqlite3.connect(DB_FILE)
+def check_db(enter_id):
+    conn = sqlite3.connect('uley3_0.db')
+    conn.execute("PRAGMA foreign_keys = ON")
     cursor = conn.cursor()
     
-    # Пример запроса (замените на ваши таблицы)
-    cursor.execute("SELECT * FROM telemetry ORDER BY id DESC LIMIT 20")
-    rows = cursor.fetchall()
+    cursor.execute("SELECT * FROM uley WHERE id_pasek = ?", (enter_id,))
+    result = cursor.fetchone()
     
     conn.close()
-    return {"status": "success", "data": rows}
+    return result
+    
+@app.route('/api/check-enter', methods=['POST'])
+def handle_check():
+    data = request.get_json()
+    enter_id = data.get('id', '').strip()
+    
+    if not enter_id:
+        return jsonify({'status': 'error', 'message': 'Пустой ID'}), 400
+        
+    db_result = check_db(enter_id)
+    
+    if db_result:
+        return jsonify({'status': 'success', 'message': 'Пасека найдена'})
+    else:
+        return jsonify({'status': 'not_found', 'message': 'Пасека не существует'})
 
-@app.post("/add")
-def add_data(temperature: float, humidity: float):
-    # Сюда датчики будут бесплатно слать новые данные
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
-    cursor.execute(
-        "INSERT INTO telemetry (temperature, humidity) VALUES (?, ?)", 
-        (temperature, humidity)
-    )
-    conn.commit()
-    conn.close()
-    
-    # [ЗДЕСЬ БУДЕТ КОД]: Отправить обновленный файл .db в бесплатное облако, чтобы он не пропал
-    
-    return {"status": "saved"}
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
+

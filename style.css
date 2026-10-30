@@ -57,6 +57,7 @@ body {
     opacity: 0;
     animation: fadeIn 1.5s ease-out 0.8s forwards;
 
+    cursor: pointer;      /* Курсор мышки превращается в "руку" при наведении */
     pointer-events: auto; /* Включает клики обратно только для самой кнопки */
     position: relative;   /* Выводит кнопку в активный слой */
     z-index: 10;
@@ -71,6 +72,47 @@ body {
 /* Эффект при клике: кнопка пружинит обратно на свое место */
 .enter-button:active {
     transform: translateY(0);
+}
+
+.honey-card {
+    background: #d08c60cc;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 24px;
+    width: 320px;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    color: #292524;
+    position: relative;
+    box-shadow: 0 10px 30px #b584634d;
+}
+
+.honey-card h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+}
+
+.honey-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 2px solid #e8ac65;
+    border-radius: 12px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #b58463;
 }
 
 /* если экран меньше или равен 768 пикселей (смартфоны) */
