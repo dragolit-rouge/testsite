@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Наполнение 4 фиксированных колонок: Улей, Значение, Единица измерения, Время
             row.innerHTML = `
-                <td>${item.hive_id || '—'}</td>
-                <td><strong>${item.value || '—'}</strong></td>
-                <td>${item.unit || '—'}</td>
-                <td>${item.time || '—'}</td>
+                <td>${item.hive_id ?? '—'}</td>
+                <td><strong>${item.value ?? '—'}</strong></td>
+                <td>${item.unit ?? '—'}</td>
+                <td>${item.time ?? '—'}</td>
             `;
             
             // Добавление сформированного узла tr в DOM-дерево таблицы
