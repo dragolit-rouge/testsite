@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('http://93.123.13.87', {
+            const response = await fetch('http://93.123.13.87/api/check-enter', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
