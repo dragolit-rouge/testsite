@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (data.status === 'success') {
                 alert('Успешно! Открываем улей.');
-                modalWindow.style.display = 'none';
+                 localStorage.setItem('currentHive', JSON.stringify(data.hive));
+
+                window.location.href = 'workspace.html';
             } else {
                 alert('Пасека не найдена.');
             }

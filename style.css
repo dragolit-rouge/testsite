@@ -117,6 +117,130 @@ body {
     color: #b58463;
 }
 
+/* Настройки контейнера для новой страницы (перезаписываем flex для body из входа) */
+.workspace-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow-y: auto; /* Разрешаем прокрутку, если таблица длинная */
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Главный заголовок страницы */
+.workspace-body h1 {
+    font-family: 'Comfortaa', cursive;
+    color: #292524; /* Фирменный темно-коричневый цвет текста */
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 4px rgba(181, 132, 99, 0.2);
+}
+
+/* Изменяемый подзаголовок h2 над таблицей */
+.workspace-body h2 {
+    font-family: 'Comfortaa', cursive;
+    color: #292524;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* 1. Контейнер для вкладок (кнопок) */
+.tab_contain {
+    display: flex;
+    gap: 12px;
+    background: #ffffff99; /* Полупрозрачный белый */
+    backdrop-filter: blur(10px); /* Эффект матового стекла */
+    padding: 10px;
+    border-radius: 20px; /* Округлые зефирные углы */
+    box-shadow: 0 10px 25px #b5846326;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+/* Базовый стиль кнопок-вкладок */
+.tab-btn {
+    font-family: 'Comfortaa', cursive;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #b58463; /* Цвет в тон закрывающей кнопки */
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Эффект наведения на вкладку */
+.tab-btn:hover {
+    background-color: #fef08a4d; /* Легкое янтарное свечение */
+    color: #292524;
+}
+
+/* Стиль для АКТИВНОЙ вкладки (фирменный градиент) */
+.tab-btn.active {
+    background: linear-gradient(135deg, #d08c60 0%, #e8ac65 100%);
+    color: #f1dca7; /* Светло-кремовый текст */
+    box-shadow: 0 4px 12px #b584634d;
+}
+
+/* 2. Стилизация таблицы SmartHive */
+table {
+    max-width: 800px;
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffffcc; /* Полупрозрачный фон таблицы */
+    backdrop-filter: blur(10px);
+    border-radius: 24px; /* Закругляем всю таблицу как honey-card */
+    overflow: hidden;
+    box-shadow: 0 10px 30px #b5846333;
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 40px;
+}
+
+/* Шапка таблицы */
+thead {
+    background-color: #d08c6022; /* Очень нежный оттенок основного цвета */
+    border-bottom: 2px solid #e8ac6566;
+}
+
+th {
+    padding: 16px 20px;
+    color: #292524;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+
+/* Строки с данными */
+td {
+    padding: 16px 20px;
+    color: #292524;
+    font-size: 15px;
+    border-bottom: 1px solid #e8ac6533; /* Мягкие янтарные разделители */
+}
+
+/* Подсветка строки при наведении мыши */
+tbody tr:hover td {
+    background-color: #fef08a22; /* Пчелиная подсветка строки */
+    cursor: default;
+}
+
+/* Убираем нижнюю линию у последней строки для красоты скругления */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
 /* если экран меньше или равен 768 пикселей (смартфоны) */
 @media (max-width: 768px) {
     body {
