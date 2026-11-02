@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('http://127.0.0', {
+            const response = await fetch('http://93.123.13.87', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
