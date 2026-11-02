@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('http://93.123.13.87/api/check-enter', {
+            const response = await fetch('https://smarthive.digital:5000/api/check-enter', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
