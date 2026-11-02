@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Соответствие системных идентификаторов вкладок отображаемым заголовкам h2
     const tabTitles = {
-        humidity: "Показатели влажности",
-        temperature: "Показатели температуры",
+        hum: "Показатели влажности",
+        temp: "Показатели температуры",
         sounds: "Анализ звука в улье",
         analysis: "Общий анализ"
     };
@@ -72,5 +72,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Первичный запуск рендеринга для дефолтной вкладки 'humidity' при загрузке DOM
-    renderTableData('humidity');
+    renderTableData('hum');
 });
