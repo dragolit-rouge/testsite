@@ -30,5 +30,5 @@ def handle_check():
         return jsonify({'status': 'not_found', 'message': 'Пасека не существует'})
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
