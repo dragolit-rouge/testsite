@@ -246,30 +246,60 @@ tbody tr:last-child td {
 
 
 /* если экран меньше или равен 768 пикселей (смартфоны) */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
+    /* На телефонах запрет прокрутки body (overflow: hidden) может заблокировать контент,
+       поэтому для стартового экрана лучше разрешить вертикальный скролл при необходимости */
     body {
-        height: auto;        /* Высота больше не зажата в рамки экрана */
-        overflow-y: auto;    /* Разрешаем аккуратную вертикальную прокрутку пальцем */
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
     }
 
-    .background-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        z-index: -1;
-    }
-
+    /* Уменьшаем логотип, чтобы он корректно смотрелся на узких экранах */
     .text-logo {
-        width: 30%;     /* На телефоне текст займет 75% от ширины экрана, как бы мал он ни был */
+        width: 280px; 
     }
 
-    .enter-button {
-        width: 80%;           
-        padding: 16px 20px;   
-        font-size: 18px;      
-        box-shadow: 0 6px 18px #b584635d; 
+    /* Сжимаем отступы на рабочей странице */
+    .workspace-body {
+        padding: 20px 10px;
+        height: auto;
+    }
+
+    /* Адаптируем заголовки под мобильные */
+    .workspace-body h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .workspace-body h2 {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    /* Карточка авторизации занимает почти всю ширину экрана с небольшими отступами по бокам */
+    .honey-card {
+        width: 90%;
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    /* Делаем таблицу прокручиваемой по горизонтали, чтобы она не ломала верстку */
+    table {
+        font-size: 13px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        padding: 12px 14px;
+    }
+
+    /* Уменьшаем кнопки вкладок для компактности */
+    .tab-btn {
+        padding: 10px 16px;
+        font-size: 13px;
     }
 }
