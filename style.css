@@ -271,11 +271,13 @@ tbody tr:last-child td {
     .workspace-body h1 {
         font-size: 22px;
         text-align: center;
+        font-family: 'Comfortaa', cursive;
     }
 
     .workspace-body h2 {
         font-size: 17px;
         text-align: center;
+        font-family: 'Comfortaa', cursive;
     }
 
     /* Карточка авторизации занимает почти всю ширину экрана с небольшими отступами по бокам */
@@ -283,11 +285,13 @@ tbody tr:last-child td {
         width: 90%;
         max-width: 320px;
         padding: 20px;
+        font-family: 'Comfortaa', cursive;
     }
 
     /* Делаем таблицу прокручиваемой по горизонтали, чтобы она не ломала верстку */
     table {
         font-size: 13px;
+        font-family: 'Comfortaa', cursive;
         display: block;
         overflow-x: auto;
         white-space: nowrap;
@@ -295,11 +299,13 @@ tbody tr:last-child td {
 
     th, td {
         padding: 12px 14px;
+        font-family: 'Comfortaa', cursive;
     }
 
     /* Уменьшаем кнопки вкладок для компактности */
     .tab-btn {
         padding: 10px 16px;
         font-size: 13px;
+        font-family: 'Comfortaa', cursive;
     }
 }
