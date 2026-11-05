@@ -192,6 +192,10 @@ body {
     box-shadow: 0 4px 12px #b584634d;
 }
 
+.analysis-block {
+    font-family: 'Comfortaa', cursive;
+    background: #ffffffcc; /* Полупрозрачный белый фон */
+}
 /* 2. Стилизация таблицы SmartHive */
 table {
     max-width: 800px;
